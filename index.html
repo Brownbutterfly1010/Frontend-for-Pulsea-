@@ -18,7 +18,7 @@ h2{font-size:clamp(2.2rem,5.5vw,4rem);line-height:1;letter-spacing:-.05em;margin
 .lead{color:var(--mute);font-size:1.25rem;max-width:36ch}
 .hero{background:#000;color:#fff;min-height:110vh;display:grid;place-items:center;text-align:center;padding-top:8rem;overflow:hidden;position:relative}
 .hero::before{content:"";position:absolute;width:900px;height:900px;left:50%;top:48%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(20,184,166,.32),transparent 62%);pointer-events:none}
-.hero .wrap{position:relative}.hero .lead{margin:1.4rem auto;color:#a6a6b2}
+.hero .wrap{position:relative;z-index:1}.hero::after{content:"";position:absolute;inset:auto 0 0;height:260px;background:linear-gradient(transparent,var(--soft));pointer-events:none}.hero::before{animation:gl 2s ease-out both}@keyframes gl{from{opacity:0}to{opacity:1}}.hero .lead{margin:1.4rem auto;color:#a6a6b2}
 .btn{display:inline-block;cursor:pointer;font:inherit;font-weight:600;font-size:1rem;padding:.85rem 1.6rem;border-radius:99px;border:0;background:#fff;color:#000;text-decoration:none;transition:transform .25s}
 .btn.dk{background:var(--ink);color:var(--bg)}.btn.ghost{background:rgba(255,255,255,.12);color:#fff}
 .render{position:relative;width:min(560px,92%);margin:3rem auto 0;perspective:900px}
@@ -47,11 +47,13 @@ h2{font-size:clamp(2.2rem,5.5vw,4rem);line-height:1;letter-spacing:-.05em;margin
 .nokey{display:grid;place-items:center;text-align:center;padding:2rem;color:var(--mute)}.pin2{transition:r .3s}
 .dash{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem}.stat{background:var(--soft);border-radius:24px;padding:1.6rem}.stat span{color:var(--mute)}
 .seg{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:2rem}.seg button{font:inherit;font-weight:600;cursor:pointer;padding:.6rem 1.2rem;border-radius:99px;border:0;background:var(--soft);color:var(--ink)}.seg button.on{background:var(--ink);color:var(--bg)}
-.room{margin-top:1rem;border-radius:28px;padding:2.5rem;color:#fff;transition:background .5s;min-height:170px}
-.cta{text-align:center;background:#000;color:#fff}.cta .lead{margin:0 auto 2rem;color:#a6a6b2}
+.room{margin-top:1rem;border-radius:28px;padding:2.5rem;color:#fff;transition:background 1s ease;min-height:170px}
+.cta{text-align:center;background:#000;color:#fff;position:relative}.cta::before{content:"";position:absolute;inset:0 0 auto;height:240px;background:linear-gradient(var(--card),#000);pointer-events:none}.cta .wrap{position:relative}.cta .lead{margin:0 auto 2rem;color:#a6a6b2}
 :focus-visible{outline:2px solid var(--acc);outline-offset:3px}
 @media(max-width:800px){.pin,.map,.dash{grid-template-columns:1fr}.pin{gap:1rem}.steps{height:190px}.phone{height:420px;width:230px}header nav a:not(.pill){display:none}.mapbox{height:380px}.note{display:none}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+body{overflow-x:clip}
+@media(max-width:800px){section{padding:5rem 1.1rem}.hero{min-height:100svh;padding-top:6.5rem}h1{font-size:clamp(2.4rem,12vw,3.6rem)}.lead{font-size:1.08rem}.render{margin-top:2rem}.story{height:320vh}.pin{height:100svh;align-content:center;gap:.5rem}.steps{height:170px}.step h2{font-size:1.7rem}.phone{width:200px;height:min(360px,46svh);border-width:8px;border-radius:36px}.phone::before{width:64px;height:18px;margin-left:-32px}.scr{padding:2.4rem .8rem;font-size:.85rem;gap:.5rem}.big{font-size:2.2rem}.mapbox{height:340px;border-radius:22px}.list{grid-auto-flow:column;grid-auto-columns:78%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:.4rem}.h{scroll-snap-align:start}.dash{grid-template-columns:repeat(3,1fr);gap:.6rem}.stat{padding:1rem}.stat .big{font-size:1.7rem}.stat span{font-size:.78rem;display:block;line-height:1.25}.room{padding:1.6rem;border-radius:22px}.seg button{padding:.55rem 1rem;font-size:.92rem}header{padding-left:1rem;padding-right:1rem}.btn{padding:.8rem 1.3rem}.cta .lead{font-size:1.05rem}}
 </style></head><body><svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="lg" viewBox="0 0 32 32"><defs><linearGradient id="lgg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#14b8a6"/><stop offset="1" stop-color="#2563eb"/></linearGradient></defs><rect width="32" height="32" rx="9" fill="url(#lgg)"/><path d="M10 25.5V7.5h7.5a5.2 5.2 0 0 1 0 10.4H10" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="18" cy="12.7" r="1.7" fill="#fff"/></symbol></svg>
 <header><a class="brand" href="#top" aria-label="Pulsea home"><svg width="30" height="30"><use href="#lg"/></svg>Pulsea</a><nav><a href="#story">How it works</a><a href="#hotels">Hotels</a><a href="#live">Live room</a><a class="pill" href="#hotels">Get started</a></nav></header>
 
