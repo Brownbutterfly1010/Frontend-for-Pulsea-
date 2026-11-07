@@ -1,0 +1,90 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pulsea Hotel</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef2f1;--card:#fff;--ink:#14201f;--mute:#5d6c6a;--line:#d9e1df;--acc:#0b7a75;--on:#fff;--warn:#c2410c;--ok:#1f9d63;color-scheme:light dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0e1514;--card:#162120;--ink:#e8f0ee;--mute:#92a5a2;--line:#243532;--acc:#3cc4b9;--on:#062321;--warn:#fb923c;--ok:#4ade80}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.5 "Instrument Sans",system-ui,sans-serif}
+.shell{display:grid;grid-template-columns:230px 1fr;min-height:100vh}
+nav{display:flex;flex-direction:column;gap:.25rem;padding:1.5rem 1rem;border-right:1px solid var(--line)}
+.brand{font-weight:700;font-size:1.3rem;display:flex;gap:.5rem;align-items:center;margin-bottom:1.5rem}
+.dot{width:12px;height:12px;border-radius:50%;background:var(--acc);animation:p 2.4s ease-out 2}
+@keyframes p{0%{box-shadow:0 0 0 0 var(--acc)}100%{box-shadow:0 0 0 14px transparent}}
+nav button{all:unset;cursor:pointer;padding:.6rem .8rem;border-radius:10px;color:var(--mute);font-weight:500;display:flex;justify-content:space-between}
+nav button:hover{background:color-mix(in srgb,var(--acc) 10%,transparent)}nav button.on{background:var(--acc);color:var(--on)}
+.main{padding:2rem clamp(1rem,4vw,3rem);max-width:980px;width:100%}
+h1{font-size:2rem;margin:0;letter-spacing:-.02em}h2{font-size:1.1rem;margin:0 0 .6rem}
+.head{display:flex;gap:1rem;align-items:center;margin-bottom:1.25rem;flex-wrap:wrap}
+.chip{padding:.25rem .8rem;border-radius:99px;font-size:.85rem;font-weight:600;background:color-mix(in srgb,var(--acc) 22%,transparent)}
+.chip.dirty,.chip.maintenance{background:color-mix(in srgb,var(--warn) 22%,transparent)}.chip.ready{background:color-mix(in srgb,var(--ok) 22%,transparent)}
+.seg{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.25rem}
+.seg button{cursor:pointer;font:inherit;padding:.5rem 1rem;border-radius:99px;border:1px solid var(--line);background:var(--card);color:var(--ink)}
+.seg button.on{background:var(--ink);color:var(--bg)}.seg button:disabled{opacity:.4;cursor:not-allowed}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin-bottom:1rem}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1rem}.stat b{font-size:1.8rem;display:block;line-height:1.1}.stat span{color:var(--mute);font-size:.9rem}
+.two{display:grid;grid-template-columns:1.2fr 1fr;gap:1rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.25rem;display:flex;flex-direction:column;gap:.9rem;margin-bottom:1rem}
+.row{display:flex;gap:.7rem;flex-wrap:wrap;align-items:center}.row input{flex:1;min-width:150px}
+label{display:flex;flex-direction:column;gap:.3rem;font-size:.9rem;font-weight:500}
+input,select{font:inherit;padding:.6rem .75rem;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+.btn{cursor:pointer;font:inherit;font-weight:600;padding:.65rem 1.1rem;border-radius:10px;border:0;background:var(--acc);color:var(--on);text-decoration:none;align-self:flex-start}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}.btn:disabled{opacity:.45;cursor:not-allowed}
+.muted{color:var(--mute);margin:0;font-size:.92rem}
+ul{list-style:none;padding:0;margin:0;display:grid;gap:.5rem}
+li.t{display:flex;justify-content:space-between;gap:1rem;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:.75rem 1rem}
+li.t label{flex-direction:row;gap:.75rem;font-size:1rem;align-items:center}li.done label{text-decoration:line-through;color:var(--mute)}
+.tag{font-size:.8rem;padding:.15rem .6rem;border-radius:99px;background:var(--line)}.tag.fault{background:color-mix(in srgb,var(--warn) 22%,transparent)}
+.feed li{display:flex;gap:.75rem;font-size:.92rem;padding:.4rem 0;border-bottom:1px solid var(--line)}.feed time{color:var(--mute);min-width:3.2rem}
+.bar{display:grid;grid-template-columns:110px 1fr 24px;gap:.6rem;align-items:center;font-size:.92rem}.bar i{display:block;height:10px;border-radius:6px;background:var(--warn)}
+.phone{width:290px;border:8px solid var(--ink);border-radius:34px;background:var(--bg);padding:1.2rem 1rem;display:flex;flex-direction:column;gap:.7rem;margin:0 auto}
+.phone .btn{width:100%;text-align:center}
+.toast{position:fixed;left:50%;bottom:calc(1.5rem + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);background:var(--ink);color:var(--bg);padding:.6rem 1.1rem;border-radius:99px;opacity:0;pointer-events:none;transition:.25s}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+@media(max-width:760px){.shell{grid-template-columns:1fr}nav{flex-direction:row;flex-wrap:wrap;border:0;border-bottom:1px solid var(--line)}.brand{margin:0 1rem 0 0}.two{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style></head><body>
+<div class="shell"><nav id="nav"></nav><main class="main" id="main"></main></div><div class="toast" id="toast" role="status"></div>
+<script>
+const LABEL={ready:"Ready",occupied:"Occupied",dirty:"Needs cleaning",maintenance:"Out of service"};
+const hm=()=>new Date().toLocaleTimeString([], {hour:"2-digit",minute:"2-digit"});
+const day=n=>new Date(Date.now()+n*864e5).toLocaleDateString("en-ZA",{day:"numeric",month:"short"});
+let S={tab:"desk",state:"ready",stay:null,tasks:[{id:1,t:"Fix leaking bathroom tap",k:"fault",d:false},{id:2,t:"Replace towels",k:"hk",d:false}],log:[{h:"08:10",m:"Leaking tap reported by guest"},{h:"07:30",m:"Room marked ready"}],stays:6};
+try{const x=localStorage.getItem("pulsea");if(x)S=Object.assign(S,JSON.parse(x),{tab:"desk"})}catch(e){}
+const save=()=>{try{localStorage.setItem("pulsea",JSON.stringify(S))}catch(e){}};
+function say(m){const t=document.getElementById("toast");t.textContent=m;t.classList.add("show");clearTimeout(say.x);say.x=setTimeout(()=>t.classList.remove("show"),2400)}
+function log(m){S.log.unshift({h:hm(),m})}
+function act(m,fn){fn();log(m);save();say(m);render()}
+const open=()=>S.tasks.filter(t=>!t.d).length;
+function render(){
+ const tabs=[["desk","Front desk"],["tasks","Tasks"+(open()?` (${open()})`:"")],["history","Room history"],["guest","Guest portal"]];
+ nav.innerHTML=`<div class="brand"><span class="dot"></span>Pulsea</div>`+tabs.map(([id,l])=>`<button class="${S.tab==id?"on":""}" data-tab="${id}">${l}</button>`).join("")+`<p class="muted" style="margin-top:auto">Demo data saved in this browser</p>`;
+ main.innerHTML=V[S.tab]();
+ const f=document.getElementById("ci");if(f)f.onsubmit=e=>{e.preventDefault();const d=new FormData(f),n=+d.get("n")||1;act("Checked in "+d.get("g"),()=>{S.stay={g:d.get("g"),p:d.get("p"),out:day(n),n};S.state="occupied";S.stays++})};
+ const tf=document.getElementById("tf");if(tf)tf.onsubmit=e=>{e.preventDefault();const d=new FormData(tf),t=String(d.get("t")).trim();if(t)act("Task added: "+t,()=>S.tasks.push({id:Date.now(),t,k:d.get("k"),d:false}))};
+ const gf=document.getElementById("gf");if(gf)gf.onsubmit=e=>{e.preventDefault();const t=new FormData(gf).get("t").trim();if(t)act("Guest reported: "+t,()=>S.tasks.push({id:Date.now(),t,k:"fault",d:false}))};
+}
+document.addEventListener("click",e=>{const b=e.target.closest("[data-tab],[data-state],[data-do],[data-tk],[data-req]");if(!b)return;const d=b.dataset;
+ if(d.tab){S.tab=d.tab;render()}
+ else if(d.state)act("Room marked "+LABEL[d.state].toLowerCase(),()=>S.state=d.state);
+ else if(d.do=="out")act("Checked out. Cleaning task added",()=>{S.stay=null;S.state="dirty";S.tasks.push({id:Date.now(),t:"Turn over room",k:"hk",d:false})});
+ else if(d.tk){const t=S.tasks.find(x=>x.id==d.tk);act(t.d?"Task reopened":"Task done: "+t.t,()=>t.d=!t.d)}
+ else if(d.req)act("Guest requested "+d.req,()=>S.tasks.push({id:Date.now(),t:d.req,k:"hk",d:false}));
+});
+const V={
+desk:()=>`<div class="head"><h1>Room 1</h1><span class="chip ${S.state}">${LABEL[S.state]}</span></div>
+<div class="seg">${Object.keys(LABEL).map(k=>`<button data-state="${k}" class="${S.state==k?"on":""}" ${S.state=="occupied"&&k!="occupied"?"disabled":""}>${LABEL[k]}</button>`).join("")}</div>
+<div class="stats"><div class="stat"><b>${S.stays}</b><span>Stays this month</span></div><div class="stat"><b>${open()}</b><span>Open tasks</span></div><div class="stat"><b>${S.tasks.filter(t=>t.k=="fault"&&!t.d).length}</b><span>Open faults</span></div></div>
+<div class="two"><div>${S.stay?`<section class="card"><h2>${S.stay.g}</h2><p class="muted">${S.stay.p} · out ${S.stay.out} (${S.stay.n} night${S.stay.n>1?"s":""})</p><div class="row"><a class="btn ghost" target="_blank" rel="noreferrer" href="https://wa.me/${S.stay.p.replace(/\D/g,"")}">Message on WhatsApp</a><button class="btn" data-do="out">Check out</button></div></section>`
+:`<form class="card" id="ci"><h2>Check in a guest</h2><label>Full name<input name="g" required placeholder="Thando Dlamini"></label><label>WhatsApp number<input name="p" required placeholder="27 82 123 4567"></label><label>Nights<input name="n" type="number" min="1" value="1"></label><button class="btn" ${S.state!="ready"?"disabled":""}>Check in</button>${S.state!="ready"?`<p class="muted">Mark the room Ready before checking in.</p>`:""}</form>`}</div>
+<section class="card"><h2>Today</h2><ul class="feed">${S.log.slice(0,6).map(l=>`<li><time>${l.h}</time>${l.m}</li>`).join("")}</ul></section></div>`,
+tasks:()=>`<div class="head"><h1>Tasks</h1></div><form class="card row" id="tf"><input name="t" placeholder="What needs doing?" aria-label="Task"><select name="k" aria-label="Type"><option value="hk">Housekeeping</option><option value="fault">Fault</option></select><button class="btn">Add task</button></form>
+${S.tasks.length?"":`<p class="muted">No tasks. Add one above.</p>`}<ul>${S.tasks.map(t=>`<li class="t ${t.d?"done":""}"><label><input type="checkbox" data-tk="${t.id}" ${t.d?"checked":""}>${t.t}</label><span class="tag ${t.k}">${t.k=="fault"?"Fault":"Housekeeping"}</span></li>`).join("")}</ul>`,
+history:()=>{const f=S.tasks.filter(t=>t.k=="fault"),c={};f.forEach(t=>{const w=t.t.toLowerCase().match(/tap|leak|aircon|wifi|light|tv|door|toilet|shower/)?.[0]||"other";c[w]=(c[w]||0)+1});
+ return `<div class="head"><h1>Room history</h1></div><section class="card"><h2>Recurring faults</h2>${Object.keys(c).length?Object.entries(c).map(([k,v])=>`<div class="bar"><span>${k}</span><i style="width:${v*40}px"></i><b>${v}</b></div>`).join(""):`<p class="muted">No faults logged yet.</p>`}</section><section class="card"><h2>Activity</h2><ul class="feed">${S.log.map(l=>`<li><time>${l.h}</time>${l.m}</li>`).join("")}</ul></section>`},
+guest:()=>`<div class="head"><h1>Guest portal</h1></div><p class="muted" style="margin-bottom:1rem">What guests see after scanning the room QR code. Reporting a problem here creates a fault in Tasks.</p>
+<div class="phone"><h2>Welcome to Room 1</h2><p class="muted">Wi-Fi: PulseaGuest · Checkout 10:00</p><button class="btn ghost" data-req="Extra towels">Request towels</button><button class="btn ghost" data-req="Housekeeping visit">Request cleaning</button>
+<form id="gf" style="display:grid;gap:.5rem"><input name="t" placeholder="Something wrong? Tell us" aria-label="Problem"><button class="btn">Report a problem</button></form><a class="btn" target="_blank" rel="noreferrer" href="https://wa.me/27000000000?text=Hi%2C%20I%27m%20in%20Room%201">Chat on WhatsApp</a></div>`};
+render();
+</script></body></html>
