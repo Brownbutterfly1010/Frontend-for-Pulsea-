@@ -80,7 +80,7 @@ body{overflow-x:clip}
 @media(max-width:800px){.sg{grid-template-columns:1fr;gap:0}.floorbox,.side{padding:1.1rem;border-radius:26px}.chips{display:flex;overflow-x:auto;max-width:100%}.chips button{white-space:nowrap;padding:.5rem .9rem;font-size:.9rem}.nf{width:100%;justify-content:center}.dots{display:none}}
 @media(max-width:800px){#grid{overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity}.fm{min-width:620px}.tl{display:block}}
 .vt{display:inline-flex;gap:2px;padding:3px;border-radius:99px;background:color-mix(in srgb,var(--ink) 9%,transparent);margin:.7rem 0}.vt button{font:inherit;font-weight:600;font-size:.85rem;border:0;background:none;color:var(--ink);padding:.35rem 1rem;border-radius:99px;cursor:pointer}.vt .on{background:var(--card);box-shadow:0 2px 8px rgba(0,0,0,.14)}
-.v3slot{position:relative;border-radius:20px;overflow:hidden;background:linear-gradient(160deg,var(--soft),var(--bg));min-height:220px}.v3slot canvas{display:block;width:100%!important;height:auto!important;touch-action:pan-y;cursor:grab}.v3slot canvas:active{cursor:grabbing}
+.v3slot{position:relative;border-radius:20px;overflow:hidden;background:linear-gradient(160deg,var(--soft),var(--bg));min-height:220px}.v3slot canvas{display:block;width:100%!important;height:auto!important;touch-action:none;cursor:grab}.v3slot canvas:active{cursor:grabbing}
 .ld{position:absolute;inset:0;display:grid;place-items:center;color:var(--mute);font-size:.9rem}.rst{position:absolute;z-index:2;top:.6rem;right:.6rem;display:flex;gap:.3rem}.rst button{font:inherit;font-size:.78rem;font-weight:600;border:0;border-radius:99px;padding:.3rem .8rem;cursor:pointer;background:var(--card);color:var(--ink);box-shadow:0 2px 8px rgba(0,0,0,.15)}.tip{font-size:.8rem;margin:.5rem 0 .8rem}
 
 /* Mobile viewport/layout fixes only */
@@ -241,9 +241,12 @@ function price(){const pr=P[B.p],n=nights(),L=[[`${R(pr.R[typeAt(B.u.i)])} × ${
 const V={el:null,r:null,sc:null,cam:null,t:-1,yaw:.5,pit:.85,dist:360,d:900,w:0,auto:true,on:false,tried:false,err:false};
 function need3d(cb){if(window.THREE)return cb();if(V.tried)return;V.tried=true;const e=document.createElement("script");e.src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js";e.onload=cb;e.onerror=()=>{V.err=true;side()};document.head.appendChild(e)}
 function init3d(){if(V.r)return;const T=THREE;V.r=new T.WebGLRenderer({antialias:true,alpha:true});V.r.shadowMap.enabled=true;V.r.shadowMap.type=T.PCFSoftShadowMap;V.r.outputEncoding=T.sRGBEncoding;V.r.setPixelRatio(Math.min(devicePixelRatio,2));V.sc=new T.Scene();V.cam=new T.PerspectiveCamera(38,4/3,1,3000);V.el.appendChild(V.r.domElement);
-const c=V.r.domElement;let dr=false;c.addEventListener("pointerdown",e=>{dr=true;V.auto=false;V.lx=e.clientX;V.ly=e.clientY;c.setPointerCapture(e.pointerId)});
-c.addEventListener("pointermove",e=>{if(!dr)return;V.yaw-=(e.clientX-V.lx)*.008;V.pit=Math.max(.12,Math.min(1.45,V.pit+(e.clientY-V.ly)*.006));V.lx=e.clientX;V.ly=e.clientY});
-c.addEventListener("pointerup",()=>dr=false);c.addEventListener("pointercancel",()=>dr=false);c.addEventListener("wheel",e=>{e.preventDefault();V.dist=Math.max(140,Math.min(620,V.dist+e.deltaY*.4))},{passive:false})}
+const c=V.r.domElement;const pts=new Map();let dr=false,pinchStart=0,pinchDist=V.dist;
+const touchGap=()=>{const a=[...pts.values()];return a.length<2?0:Math.hypot(a[0].x-a[1].x,a[0].y-a[1].y)};
+c.addEventListener("pointerdown",e=>{V.auto=false;pts.set(e.pointerId,{x:e.clientX,y:e.clientY});c.setPointerCapture(e.pointerId);if(pts.size===1){dr=true;V.lx=e.clientX;V.ly=e.clientY}else if(pts.size===2){dr=false;pinchStart=touchGap();pinchDist=V.dist}});
+c.addEventListener("pointermove",e=>{if(!pts.has(e.pointerId))return;const prev=pts.get(e.pointerId);pts.set(e.pointerId,{x:e.clientX,y:e.clientY});if(pts.size>=2){const gap=touchGap();if(pinchStart>0&&gap>0)V.dist=Math.max(110,Math.min(720,pinchDist*pinchStart/gap));return}if(!dr)return;V.yaw-=(e.clientX-prev.x)*.008;V.pit=Math.max(.12,Math.min(1.45,V.pit+(e.clientY-prev.y)*.006));V.lx=e.clientX;V.ly=e.clientY});
+const endPointer=e=>{pts.delete(e.pointerId);if(pts.size===1){const a=[...pts.values()][0];V.lx=a.x;V.ly=a.y;dr=true}else{dr=false;pinchStart=0}};
+c.addEventListener("pointerup",endPointer);c.addEventListener("pointercancel",endPointer);c.addEventListener("lostpointercapture",endPointer);c.addEventListener("wheel",e=>{e.preventDefault();V.dist=Math.max(110,Math.min(720,V.dist+e.deltaY*.4))},{passive:false})}
 function reset3d(m){if(m=="in"){V.pit=.3;V.dist=150;V.yaw=0}else{V.pit=.85;V.dist=[300,360,420][Math.max(V.t,0)];V.yaw=.5}V.auto=false}
 function buildScene(ty){const T=THREE,sc=V.sc,P3=PL[ty],cs=getComputedStyle(document.documentElement).getPropertyValue("--acc").trim()||"#0b7a75",ac=new T.Color(cs);
 while(sc.children.length)sc.remove(sc.children[0]);
