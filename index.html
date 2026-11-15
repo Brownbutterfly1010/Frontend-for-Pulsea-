@@ -82,6 +82,63 @@ body{overflow-x:clip}
 .vt{display:inline-flex;gap:2px;padding:3px;border-radius:99px;background:color-mix(in srgb,var(--ink) 9%,transparent);margin:.7rem 0}.vt button{font:inherit;font-weight:600;font-size:.85rem;border:0;background:none;color:var(--ink);padding:.35rem 1rem;border-radius:99px;cursor:pointer}.vt .on{background:var(--card);box-shadow:0 2px 8px rgba(0,0,0,.14)}
 .v3slot{position:relative;border-radius:20px;overflow:hidden;background:linear-gradient(160deg,var(--soft),var(--bg));min-height:220px}.v3slot canvas{display:block;width:100%!important;height:auto!important;touch-action:pan-y;cursor:grab}.v3slot canvas:active{cursor:grabbing}
 .ld{position:absolute;inset:0;display:grid;place-items:center;color:var(--mute);font-size:.9rem}.rst{position:absolute;z-index:2;top:.6rem;right:.6rem;display:flex;gap:.3rem}.rst button{font:inherit;font-size:.78rem;font-weight:600;border:0;border-radius:99px;padding:.3rem .8rem;cursor:pointer;background:var(--card);color:var(--ink);box-shadow:0 2px 8px rgba(0,0,0,.15)}.tip{font-size:.8rem;margin:.5rem 0 .8rem}
+
+/* Mobile viewport/layout fixes only */
+@media (max-width: 600px) {
+  html, body { width:100%; max-width:100%; overflow-x:clip; }
+  body { font-size:16px; -webkit-text-size-adjust:100%; }
+  header { min-height:56px; padding:calc(.55rem + env(safe-area-inset-top,0px)) .85rem .55rem; gap:.5rem; }
+  .brand { flex:0 0 auto; font-size:1.12rem; gap:.4rem; }
+  header nav { min-width:0; gap:.35rem; }
+  header nav .pill { white-space:nowrap; padding:.45rem .8rem; font-size:.82rem; }
+  section { padding:4.5rem .9rem; scroll-margin-top:64px; }
+  .hero { min-height:100svh; min-height:100dvh; padding:calc(5.5rem + env(safe-area-inset-top,0px)) .9rem 2rem; }
+  .hero .wrap, .wrap { width:100%; min-width:0; }
+  h1 { font-size:clamp(2.35rem,11.5vw,3.5rem); overflow-wrap:anywhere; }
+  h2 { font-size:clamp(2rem,9vw,2.8rem); }
+  .lead { font-size:1rem; }
+  .render { width:100%; max-width:460px; margin-top:1.6rem; }
+  .story { height:360vh; }
+  .pin { width:100%; min-height:100svh; min-height:100dvh; height:100svh; height:100dvh; padding:calc(4.2rem + env(safe-area-inset-top,0px)) .9rem 1rem; gap:.35rem; align-content:center; overflow:hidden; }
+  .steps { height:145px; }
+  .step h2 { font-size:clamp(1.45rem,7vw,1.8rem); }
+  .step .lead { font-size:.92rem; margin:.55rem 0 0; }
+  .phone { width:min(200px,56vw); height:min(350px,47dvh); min-height:250px; }
+  .map { grid-template-columns:minmax(0,1fr); gap:1rem; }
+  .mapbox { width:100%; height:min(65dvh,360px); min-height:260px; }
+  .list { width:100%; min-width:0; grid-auto-columns:82%; }
+  .book, .sg { grid-template-columns:minmax(0,1fr); min-width:0; }
+  .floorbox, .side { min-width:0; width:100%; padding:.9rem; border-radius:20px; }
+  .fh { align-items:flex-start; }
+  .fh h3 { font-size:clamp(1.8rem,8vw,2.4rem); }
+  .fh .nf { padding:.65rem .8rem; font-size:.85rem; white-space:nowrap; }
+  .legend { gap:.55rem .8rem; font-size:.72rem; }
+  #grid { max-width:100%; overflow-x:auto; overscroll-behavior-x:contain; }
+  .fm { width:620px; max-width:none; }
+  .f2 { grid-template-columns:minmax(0,1fr) minmax(0,1fr); }
+  .f2 input { width:100%; min-width:0; font-size:16px; }
+  .dash { grid-template-columns:minmax(0,1fr); gap:.7rem; }
+  .stat { padding:1rem 1.1rem; }
+  .stat .big { font-size:1.8rem; }
+  .room { min-height:145px; }
+  .seg { gap:.4rem; }
+  .seg button { padding:.55rem .8rem; font-size:.85rem; }
+  .v3slot { width:100%; min-height:200px; }
+  .v3slot canvas { max-width:100%; }
+  .cta h2 { font-size:clamp(2rem,9vw,2.8rem); }
+}
+@media (max-width:360px) {
+  .hero .btn { padding:.7rem .95rem; font-size:.88rem; }
+  .fh { gap:.5rem; }
+  .fh .nf { padding:.6rem .65rem; font-size:.78rem; }
+  .f2 { grid-template-columns:minmax(0,1fr); }
+}
+/* Preserve the original sticky, scroll-driven story behaviour on mobile. */
+@media (max-width:600px) {
+  .story { position:relative; height:360vh; overflow:visible; }
+  .story .pin { position:sticky; top:0; height:100svh; min-height:100svh; overflow:visible; }
+}
+
 </style></head><body><svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="lg" viewBox="0 0 32 32"><defs><linearGradient id="lgg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#14b8a6"/><stop offset="1" stop-color="#2563eb"/></linearGradient></defs><rect width="32" height="32" rx="9" fill="url(#lgg)"/><path d="M10 25.5V7.5h7.5a5.2 5.2 0 0 1 0 10.4H10" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="18" cy="12.7" r="1.7" fill="#fff"/></symbol></svg>
 <header><a class="brand" href="#top" aria-label="Pulsea home"><svg width="30" height="30"><use href="#lg"/></svg>Pulsea</a><nav><a href="#story">How it works</a><a href="#hotels">Hotels</a><a href="#rooms">Rooms</a><a href="#live">Live room</a><a class="pill" href="#hotels">Get started</a></nav></header>
 
