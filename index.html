@@ -54,8 +54,36 @@ h2{font-size:clamp(2.2rem,5.5vw,4rem);line-height:1;letter-spacing:-.05em;margin
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
 body{overflow-x:clip}
 @media(max-width:800px){section{padding:5rem 1.1rem}.hero{min-height:100svh;padding-top:6.5rem}h1{font-size:clamp(2.4rem,12vw,3.6rem)}.lead{font-size:1.08rem}.render{margin-top:2rem}.story{height:320vh}.pin{height:100svh;align-content:center;gap:.5rem}.steps{height:170px}.step h2{font-size:1.7rem}.phone{width:200px;height:min(360px,46svh);border-width:8px;border-radius:36px}.phone::before{width:64px;height:18px;margin-left:-32px}.scr{padding:2.4rem .8rem;font-size:.85rem;gap:.5rem}.big{font-size:2.2rem}.mapbox{height:340px;border-radius:22px}.list{grid-auto-flow:column;grid-auto-columns:78%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:.4rem}.h{scroll-snap-align:start}.dash{grid-template-columns:repeat(3,1fr);gap:.6rem}.stat{padding:1rem}.stat .big{font-size:1.7rem}.stat span{font-size:.78rem;display:block;line-height:1.25}.room{padding:1.6rem;border-radius:22px}.seg button{padding:.55rem 1rem;font-size:.92rem}header{padding-left:1rem;padding-right:1rem}.btn{padding:.8rem 1.3rem}.cta .lead{font-size:1.05rem}}
+.chips{display:flex;gap:.5rem;flex-wrap:wrap;margin:1.5rem 0}.chips button,.tabs button{font:inherit;font-weight:600;cursor:pointer;padding:.55rem 1.1rem;border-radius:99px;border:0;background:var(--card);color:var(--ink)}.chips .on,.tabs .on{background:var(--ink);color:var(--bg)}
+.book{display:grid;grid-template-columns:1.25fr 1fr;gap:1.5rem;align-items:start}.floorbox,.side{background:var(--card);border-radius:28px;padding:1.5rem}.tabs{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:1rem}
+.legend{display:flex;gap:1rem;flex-wrap:wrap;font-size:.8rem;color:var(--mute);margin-bottom:1rem}.legend i{display:inline-block;width:12px;height:12px;border-radius:4px;margin-right:.35rem;vertical-align:-1px}
+.plan{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem}.cor{grid-column:1/-1;text-align:center;font-size:.72rem;letter-spacing:.25em;color:var(--mute);padding:.7rem;border-radius:12px;background:repeating-linear-gradient(90deg,var(--soft) 0 12px,transparent 12px 24px)}
+.u{font:inherit;cursor:pointer;border:0;border-radius:14px;padding:.8rem .2rem;background:color-mix(in srgb,var(--acc) 22%,var(--soft));color:var(--ink);font-weight:600;transition:.2s;display:flex;flex-direction:column;align-items:center}.u small{font-weight:500;opacity:.65;font-size:.7rem}
+.u:hover:not(:disabled){transform:translateY(-3px)}.u.sel{background:var(--acc);color:var(--on)}.u:disabled{background:transparent;border:1.5px dashed var(--line);color:var(--mute);cursor:not-allowed;opacity:.6}.u.pr{box-shadow:inset 0 0 0 1.5px #d4a017}
+.side h3{margin:0;font-size:1.3rem;letter-spacing:-.03em}.side svg.pl{width:100%;height:auto;background:var(--soft);border-radius:16px;margin:.8rem 0}.hold{font-size:.8rem;color:var(--warn);font-weight:600;min-height:1.2em}
+.sp{display:flex;gap:.8rem;flex-wrap:wrap;font-size:.85rem;color:var(--mute);margin-bottom:.8rem}.sp b{color:var(--ink)}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}.f2 label{font-size:.78rem;color:var(--mute);display:flex;flex-direction:column;gap:.2rem}.f2 input{font:inherit;padding:.5rem;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink)}
+.step2{display:flex;align-items:center;justify-content:space-between;margin:.8rem 0}.step2 div{display:flex;gap:.7rem;align-items:center}.step2 button{width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:var(--bg);color:var(--ink);font-size:1.1rem;cursor:pointer}
+.ad{display:flex;justify-content:space-between;font-size:.9rem;padding:.3rem 0;cursor:pointer}.pr2{border-top:1px solid var(--line);margin-top:.8rem;padding-top:.8rem;font-size:.9rem}.pr2 div{display:flex;justify-content:space-between;color:var(--mute)}.pr2 .t{color:var(--ink);font-size:1.25rem;font-weight:700;margin-top:.4rem}
+.btn.ghost2{background:var(--soft);color:var(--ink)}
+@media(max-width:800px){.book{grid-template-columns:1fr}.floorbox,.side{padding:1.1rem}}
+#grid{display:block}.fm{width:100%;height:auto;display:block}.rm{cursor:pointer;outline:none}.rm .rf{fill:color-mix(in srgb,var(--acc) 12%,var(--card));stroke:var(--ink);stroke-width:2;transition:fill .2s}
+.rm:hover .rf,.rm:focus-visible .rf{fill:color-mix(in srgb,var(--acc) 30%,var(--card))}.rm:focus-visible .rf{stroke:var(--acc);stroke-width:3}.rm.sel .rf{fill:var(--acc)}.rm.pr .rf{stroke:#d4a017}
+.rm text{fill:var(--ink);font-weight:700;pointer-events:none}.rm.sel text{fill:var(--on)}.rm.sel .fu *{fill:#fff}.rm.tk{cursor:not-allowed}.rm.tk .rf{fill:var(--soft);stroke-dasharray:5 4}.rm.tk text{fill:var(--mute)}
+@media(max-width:800px){.tl{display:none}}
+.book{grid-template-columns:1fr}.floorbox,.side{border-radius:32px;padding:2rem;box-shadow:0 24px 60px -36px rgba(0,0,0,.35)}
+.chips{display:inline-flex;gap:2px;padding:4px;border-radius:99px;background:color-mix(in srgb,var(--ink) 9%,transparent);margin:1.5rem 0 .6rem}.chips button{background:none}.chips .on{background:var(--card);color:var(--ink);box-shadow:0 2px 10px rgba(0,0,0,.14)}
+.fh{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:1rem}.fh small{color:var(--mute);font-weight:600}.fh h3{font-size:clamp(2.2rem,5vw,3.4rem);letter-spacing:-.045em;margin:0;line-height:1}
+.dots{display:flex;gap:6px;align-items:center}.dots i{width:7px;height:7px;border-radius:99px;background:var(--line);transition:.4s}.dots i.on{width:22px;background:var(--ink)}.nf{display:inline-flex;align-items:center;gap:.55rem}
+#grid{transition:opacity .28s,transform .28s,filter .28s}#grid.out{opacity:0;transform:translateY(-28px) scale(.98);filter:blur(6px)}#grid.in{animation:fin .55s cubic-bezier(.2,.8,.2,1)}@keyframes fin{from{opacity:0;transform:translateY(36px) scale(.98);filter:blur(6px)}}
+.sg{display:grid;grid-template-columns:1fr 1fr;gap:2rem}.legend{margin:1rem 0 0}
+@media(max-width:800px){.sg{grid-template-columns:1fr;gap:0}.floorbox,.side{padding:1.1rem;border-radius:26px}.chips{display:flex;overflow-x:auto;max-width:100%}.chips button{white-space:nowrap;padding:.5rem .9rem;font-size:.9rem}.nf{width:100%;justify-content:center}.dots{display:none}}
+@media(max-width:800px){#grid{overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity}.fm{min-width:620px}.tl{display:block}}
+.vt{display:inline-flex;gap:2px;padding:3px;border-radius:99px;background:color-mix(in srgb,var(--ink) 9%,transparent);margin:.7rem 0}.vt button{font:inherit;font-weight:600;font-size:.85rem;border:0;background:none;color:var(--ink);padding:.35rem 1rem;border-radius:99px;cursor:pointer}.vt .on{background:var(--card);box-shadow:0 2px 8px rgba(0,0,0,.14)}
+.v3slot{position:relative;border-radius:20px;overflow:hidden;background:linear-gradient(160deg,var(--soft),var(--bg));min-height:220px}.v3slot canvas{display:block;width:100%!important;height:auto!important;touch-action:pan-y;cursor:grab}.v3slot canvas:active{cursor:grabbing}
+.ld{position:absolute;inset:0;display:grid;place-items:center;color:var(--mute);font-size:.9rem}.rst{position:absolute;z-index:2;top:.6rem;right:.6rem;display:flex;gap:.3rem}.rst button{font:inherit;font-size:.78rem;font-weight:600;border:0;border-radius:99px;padding:.3rem .8rem;cursor:pointer;background:var(--card);color:var(--ink);box-shadow:0 2px 8px rgba(0,0,0,.15)}.tip{font-size:.8rem;margin:.5rem 0 .8rem}
 </style></head><body><svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="lg" viewBox="0 0 32 32"><defs><linearGradient id="lgg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#14b8a6"/><stop offset="1" stop-color="#2563eb"/></linearGradient></defs><rect width="32" height="32" rx="9" fill="url(#lgg)"/><path d="M10 25.5V7.5h7.5a5.2 5.2 0 0 1 0 10.4H10" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="18" cy="12.7" r="1.7" fill="#fff"/></symbol></svg>
-<header><a class="brand" href="#top" aria-label="Pulsea home"><svg width="30" height="30"><use href="#lg"/></svg>Pulsea</a><nav><a href="#story">How it works</a><a href="#hotels">Hotels</a><a href="#live">Live room</a><a class="pill" href="#hotels">Get started</a></nav></header>
+<header><a class="brand" href="#top" aria-label="Pulsea home"><svg width="30" height="30"><use href="#lg"/></svg>Pulsea</a><nav><a href="#story">How it works</a><a href="#hotels">Hotels</a><a href="#rooms">Rooms</a><a href="#live">Live room</a><a class="pill" href="#hotels">Get started</a></nav></header>
 
 <section class="hero" id="top"><div class="wrap">
 <h1 id="h1">Run your hotel<br><span class="g">from one screen.</span></h1>
@@ -89,27 +117,134 @@ body{overflow-x:clip}
 <div class="tog"><button class="on" data-m="map">Map</button><button data-m="sv">Street View</button></div></div>
 <div class="list" id="list"></div></div></div></section>
 
+<section id="rooms" style="background:var(--soft)"><div class="wrap">
+<h2 class="rv">Choose your<br><span class="g">room.</span></h2><p class="lead rv">Tap a room, then take the stairs to the next floor.</p>
+<div class="chips" id="pchips"></div><p class="muted" id="pam" style="margin:.2rem 0 1.5rem"></p>
+<div class="book"><div class="floorbox"><div class="fh"><div><small id="fp"></small><h3 id="ft"></h3></div><div class="dots" id="fd" aria-hidden="true"></div><button class="btn dk nf" data-nf><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h6v-6h6V9h6V3"/></svg>Next floor</button></div>
+<div class="legend"><span><i style="background:color-mix(in srgb,var(--acc) 22%,var(--soft))"></i>Available</span><span><i style="background:var(--acc)"></i>Selected</span><span><i style="border:1.5px dashed var(--mute)"></i>Taken</span><span><i style="box-shadow:inset 0 0 0 1.5px #d4a017"></i>Top-floor views</span></div>
+<div class="plan" id="grid"></div></div><aside class="side" id="side"></aside></div></div></section>
 <section id="live" style="background:var(--card)"><div class="wrap">
 <h2 class="rv">Your room,<br><span class="g">live.</span></h2><p class="lead rv">Change the status and watch it respond.</p>
-<div class="dash"><div class="stat"><div class="big" data-n="48">0</div><span>Rooms across hotels</span></div><div class="stat"><div class="big" data-n="82">0</div><span>Average occupancy %</span></div><div class="stat"><div class="big" data-n="3">0</div><span>Open tasks</span></div></div>
+<div class="dash"><div class="stat"><div class="big" data-n="80">0</div><span>Units across properties</span></div><div class="stat"><div class="big" data-n="82">0</div><span>Average occupancy %</span></div><div class="stat"><div class="big" data-n="3">0</div><span>Open tasks</span></div></div>
 <div class="seg" id="seg"></div><div class="room" id="room"><div class="big" id="rs"></div><p id="rt" style="margin:.5rem 0 0;opacity:.85"></p></div></div></section>
 
 <section class="cta"><div class="wrap"><svg width="56" height="56" style="margin-bottom:1.2rem"><use href="#lg"/></svg><h2>See your hotel <span class="g">at a glance.</span></h2><p class="lead">Start with one room. Add the rest when you’re ready.</p><a class="btn" href="#hotels">Back to the map</a></div></section>
 
 <script>
 const KEY=""; // paste your Google Maps JavaScript API key here (enable Maps JavaScript API)
-const H=[{n:"Pulsea Sandton",a:"Sandton",lat:-26.1076,lng:28.0567,occ:84,r:48},{n:"Pulsea Rosebank",a:"Rosebank",lat:-26.1458,lng:28.0436,occ:76,r:32},{n:"Pulsea Maboneng",a:"Maboneng",lat:-26.2041,lng:28.0607,occ:69,r:24},{n:"Pulsea Melville",a:"Melville",lat:-26.1767,lng:28.0073,occ:91,r:16}];
+const P=[{n:"Pulsea Sandton Hotel",a:"Sandton",k:"Hotel",lat:-26.1076,lng:28.0567,occ:84,fl:4,T:["Standard","Deluxe King","Family Suite"],R:[1850,2650,4200],am:["Rooftop pool","Spa","Gym","Breakfast lounge"]},
+{n:"Pulsea Rosebank Residences",a:"Rosebank",k:"Apartments",lat:-26.1458,lng:28.0436,occ:76,fl:3,T:["Studio","1 Bedroom","2 Bedroom"],R:[1100,1650,2400],am:["Secure parking","Fibre Wi-Fi","Laundry","Braai deck"]},
+{n:"Pulsea Melville Lofts",a:"Melville",k:"Apartments",lat:-26.1767,lng:28.0073,occ:91,fl:3,T:["Studio","1 Bedroom","2 Bedroom"],R:[950,1450,2100],am:["Rooftop garden","Fibre Wi-Fi","Bike storage","Coffee bar"]}];
+const H=P.map(x=>({...x,r:x.fl*8}));
 let sel=0,mode="map",gm,pano,ok=false;const $=s=>document.querySelector(s);
 const X=h=>20+(h.lng-27.99)/.09*560,Y=h=>20+(-26.09-h.lat)/.13*380;
 function drawSvg(){$("#svg").innerHTML=`<rect width="600" height="420" fill="var(--bg)"/><g stroke="var(--line)" stroke-width="10" fill="none" stroke-linecap="round"><path d="M0 120C200 90 380 170 600 110"/><path d="M80 420C140 260 300 200 330 0"/><path d="M0 300C220 280 400 330 600 260"/><path d="M450 420C440 300 520 150 560 0"/></g><g stroke="var(--line)" stroke-width="3" fill="none"><path d="M0 200H600M200 0V420M400 0V420"/></g>`+H.map((h,i)=>`<g style="cursor:pointer" data-i="${i}"><circle class="pin2" cx="${X(h)}" cy="${Y(h)}" r="${i==sel?16:9}" fill="${i==sel?"var(--acc)":"var(--ink)"}"/><text x="${X(h)+16}" y="${Y(h)+5}" font-size="15" font-weight="600" fill="var(--ink)">${h.a}</text></g>`).join("")}
-function pick(i){sel=i;document.querySelectorAll(".h").forEach((b,j)=>b.classList.toggle("on",j==i));drawSvg();if(ok){gm.panTo(H[i]);gm.setZoom(15);pano.setPosition(H[i])}}
+function pick(i){sel=i;if(B.p!=i){B.p=i;B.f=1;B.ok=null;B.u=null}document.querySelectorAll(".h").forEach((b,j)=>b.classList.toggle("on",j==i));drawSvg();if(ok){gm.panTo(H[i]);gm.setZoom(15);pano.setPosition(H[i])}rooms()}
 function view(){const m=mode=="map";$("#svg").classList.toggle("hide",!(m&&!ok));$("#gmap").classList.toggle("hide",!(m&&ok));$("#pano").classList.toggle("hide",!(!m&&ok));$("#nokey").classList.toggle("hide",!(!m&&!ok));document.querySelectorAll(".tog button").forEach(b=>b.classList.toggle("on",b.dataset.m==(m?"map":"sv")));if(ok&&!m)google.maps.event.trigger(pano,"resize")}
-$("#list").innerHTML=H.map((h,i)=>`<button class="h" data-i="${i}"><b>${h.n}</b><span>${h.r} rooms · ${h.occ}% occupied</span></button>`).join("");
+$("#list").innerHTML=H.map((h,i)=>`<button class="h" data-i="${i}"><b>${h.n}</b><span>${h.k} · ${h.r} units · ${h.occ}% occupied</span></button>`).join("");
 document.addEventListener("click",e=>{const p=e.target.closest("[data-i]");if(p)pick(+p.dataset.i);const t=e.target.closest("[data-m]");if(t){mode=t.dataset.m;view()}});
 window.initMap=()=>{gm=new google.maps.Map($("#gmap"),{center:H[0],zoom:14,disableDefaultUI:true,zoomControl:true});H.forEach((h,i)=>new google.maps.Marker({position:h,map:gm,title:h.n}).addListener("click",()=>pick(i)));pano=new google.maps.StreetViewPanorama($("#pano"),{position:H[0],addressControl:false});ok=true;view()};
 window.gm_authFailure=()=>{ok=false;view()};
 if(KEY){const s=document.createElement("script");s.src=`https://maps.googleapis.com/maps/api/js?key=${KEY}&callback=initMap`;s.async=true;document.head.appendChild(s)}
-pick(0);view();
+const FL={w:"rgba(196,154,108,.2)",t:"rgba(90,169,230,.18)",o:"rgba(34,160,107,.14)"},I="var(--ink)";
+const rc=(x,y,w,h,r,f,o)=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${r}" fill="${f}" opacity="${o}"/>`;
+const F={r:(x,y,w,h)=>rc(x,y,w,h,8,"var(--acc)",.1),
+bd:(x,y,w,h)=>{const q=w>50?(w-14)/2:w-12;return rc(x,y,w,h,5,"var(--acc)",.4)+`<path d="M${x} ${y+h*.4}H${x+w}" stroke="#fff" opacity=".7"/>`+rc(x+5,y+4,q,10,4,"#fff",.9)+(w>50?rc(x+9+q,y+4,q,10,4,"#fff",.9):"")},
+n:(x,y,w,h)=>rc(x,y,w,h,3,I,.2),w:(x,y,w,h)=>rc(x,y,w,h,0,I,.16)+`<path d="M${x+w/2} ${y}v${h}" stroke="${I}" opacity=".4"/>`,
+s:(x,y,w,h)=>rc(x,y,w,h,7,I,.2)+rc(x,y,w,8,4,I,.2),ct:(x,y,w,h)=>rc(x,y,w,h,4,I,.13),v:(x,y,w,h)=>rc(x,y,w,h,2,I,.55),
+d:(x,y,w,h)=>rc(x,y,w,h,2,I,.16)+`<circle cx="${x+w/2}" cy="${y+h+8}" r="6" fill="${I}" opacity=".2"/>`,
+t:(x,y,w,h)=>rc(x,y,w,h,5,I,.16)+[.3,.7].map(k=>`<circle cx="${x+w*k}" cy="${y-6}" r="5" fill="${I}" opacity=".2"/><circle cx="${x+w*k}" cy="${y+h+6}" r="5" fill="${I}" opacity=".2"/>`).join(""),
+sh:(x,y,w,h)=>rc(x,y,w,h,3,"#5aa9e6",.25)+`<path d="M${x} ${y}L${x+w} ${y+h}" stroke="#5aa9e6"/><circle cx="${x+w/2}" cy="${y+h/2}" r="2.5" fill="#5aa9e6"/>`,
+wc:(x,y,w,h)=>rc(x,y,w,6,2,I,.3)+`<ellipse cx="${x+w/2}" cy="${y+h/2+3}" rx="${w/2}" ry="${h/2-3}" fill="${I}" opacity=".18"/>`,
+bs:(x,y,w,h)=>rc(x,y,w,h,3,I,.14)+`<circle cx="${x+w/2}" cy="${y+h/2}" r="${h/3}" fill="#5aa9e6" opacity=".4"/>`,
+k:(x,y,w,h)=>rc(x,y,w,h,2,I,.16)+rc(x+8,y+3,18,h-6,3,"#5aa9e6",.35)+(w>60?[0,1,2,3].map(j=>`<circle cx="${x+w-34+(j%2)*14}" cy="${y+h/2-4+Math.floor(j/2)*8}" r="3" fill="${I}" opacity=".35"/>`).join(""):""),
+fr:(x,y,w,h)=>rc(x,y,w,h,2,I,.22)+`<path d="M${x} ${y+h*.4}h${w}" stroke="${I}" opacity=".4"/>`,ch:(x,y,w,h)=>rc(x,y,w,h,5,I,.2),
+p:(x,y,r)=>`<circle cx="${x}" cy="${y}" r="${r}" fill="#22a06b" opacity=".6"/>`};
+const PL=[{m:"28 m²",s:2,bed:"Queen bed",r:[[10,10,200,30,"Balcony","o"],[10,40,200,150,"Sleeping & living","w"],[210,40,120,70,"Bath","t"],[210,110,120,45,"Kitchenette","w"],[210,155,120,35,"Entry","w"]],
+f:[["bd",30,56,74,84],["s",142,54,56,26],["sh",216,46,34,34],["wc",262,48,16,22],["bs",288,48,34,18],["k",216,112,108,18]],d:[["H",250,190,22],["W",210,100,18]],o:[[210,120,210,150],[212,155,328,155],[210,160,210,185]],gd:[[60,40,180,40]],x:[[330,60,330,90]]},
+{m:"46 m²",s:3,bed:"King bed",r:[[10,10,320,30,"Balcony","o"],[10,40,130,100,"Bedroom","w"],[140,40,190,100,"Living & dining","w"],[10,140,100,50,"Bath","t"],[110,140,130,50,"Kitchen","w"],[240,140,90,50,"Entry","w"]],
+f:[["bd",32,54,76,72],["s",160,52,80,28],["t",262,60,50,40],["sh",16,146,32,32],["wc",56,148,14,22],["bs",76,148,28,16],["k",116,144,118,16]],d:[["H",262,190,22],["V",140,108,20],["D",60,140,18]],o:[[150,140,230,140],[245,140,325,140],[240,148,240,184]],gd:[[40,40,110,40],[170,40,300,40]],x:[]},
+{m:"74 m²",s:5,bed:"King + 2 singles",r:[[10,10,320,30,"Balcony","o"],[10,40,110,90,"Bedroom 1","w"],[120,40,100,90,"Bedroom 2","w"],[220,40,110,60,"Bath","t"],[220,100,110,30,"Laundry","t"],[10,130,150,60,"Living & dining","w"],[160,130,100,60,"Kitchen","w"],[260,130,70,60,"Entry","w"]],
+f:[["bd",30,52,66,66],["bd",130,52,40,70],["bd",176,52,40,70],["sh",226,46,34,34],["wc",268,48,16,22],["bs",290,48,34,18],["s",20,142,70,26],["k",166,134,88,14]],d:[["H",280,190,22],["H",60,130,20],["H",134,130,20],["V",220,66,20],["H",290,130,20]],o:[[160,140,160,180],[260,140,260,180]],gd:[[30,40,100,40],[140,40,210,40],[240,40,310,40]],x:[]}];
+const door=([k,x,y,r])=>{const g={H:[x+r,y,`V${y-r}M${x} ${y-r}A${r} ${r} 0 0 1 ${x+r} ${y}`],D:[x+r,y,`V${y+r}M${x} ${y+r}A${r} ${r} 0 0 0 ${x+r} ${y}`],V:[x,y+r,`H${x+r}M${x+r} ${y}A${r} ${r} 0 0 1 ${x} ${y+r}`],W:[x,y-r,`H${x+r}M${x+r} ${y}A${r} ${r} 0 0 0 ${x} ${y-r}`]}[k];return `<line x1="${x}" y1="${y}" x2="${g[0]}" y2="${g[1]}" stroke="var(--card)" stroke-width="4"/><path d="M${x} ${y}${g[2]}" fill="none" stroke="var(--mute)" stroke-width="1.3"/>`};
+const plan=t=>{const p=PL[t];return `<svg class="pl" viewBox="0 0 340 224" role="img" aria-label="Room layout with corridor">`+p.r.map(([x,y,w,h,l,c])=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="var(--card)" stroke="var(--ink)" stroke-width="2.5"/>`+(FL[c]?`<rect x="${x+1}" y="${y+1}" width="${w-2}" height="${h-2}" fill="${FL[c]}"/>`:"")+`<text x="${x+6}" y="${y+h-5}" font-size="8" fill="var(--mute)">${l}</text>`).join("")+`<rect x="10" y="190" width="324" height="24" fill="var(--soft)"/><path d="M16 202H328" stroke="var(--line)" stroke-width="2" stroke-dasharray="5 5"/><text x="150" y="205" font-size="8" letter-spacing="2" fill="var(--mute)">CORRIDOR</text>`+p.x.concat(p.gd).map(([a,b,c,d])=>`<line x1="${a}" y1="${b}" x2="${c}" y2="${d}" stroke="#5aa9e6" stroke-width="4"/>`).join("")+(p.o||[]).map(g=>`<line x1="${g[0]}" y1="${g[1]}" x2="${g[2]}" y2="${g[3]}" stroke="var(--card)" stroke-width="4"/>`).join("")+p.d.map(door).join("")+p.f.map(([c,...a])=>F[c](...a)).join("")+`</svg>`};
+function floorMap(){const pr=P[B.p],W=[100,130,170],MB=[26,32,40];
+let o=`<svg viewBox="0 0 640 290" class="fm" role="group" aria-label="${pr.n}, floor ${B.f}"><defs><pattern id="ht" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M0 0V7" stroke="var(--line)" stroke-width="3"/></pattern></defs><rect x="14" y="14" width="612" height="262" rx="12" fill="var(--soft)" stroke="var(--ink)" stroke-width="3"/><rect x="14" y="120" width="612" height="50" fill="var(--card)"/><rect x="72" y="134" width="496" height="22" rx="4" fill="var(--acc)" opacity=".08"/><path d="M80 145H560" stroke="var(--line)" stroke-width="2" stroke-dasharray="7 6"/><text x="320" y="149" text-anchor="middle" font-size="10" letter-spacing="4" fill="var(--mute)">CORRIDOR</text><text x="20" y="149" font-size="8" font-weight="700" fill="var(--ok)">EXIT</text><text x="598" y="149" font-size="8" font-weight="700" fill="var(--ok)">EXIT</text>`;
+o+=`<g stroke="var(--ink)" stroke-width="1.5" fill="var(--soft)"><rect x="20" y="20" width="50" height="100"/><rect x="20" y="170" width="50" height="100"/><rect x="570" y="20" width="50" height="100"/><rect x="570" y="170" width="50" height="100"/></g>`+`<g font-size="8" fill="var(--mute)" text-anchor="middle"><text x="45" y="110">Stairs</text><text x="45" y="250">Lifts</text><text x="595" y="110">Service</text><text x="595" y="262">Stairs</text></g>`;
+let x=70;for(let i=0;i<8;i++){if(i==4)x=70;const ty=typeAt(i),w=W[ty],top=i<4,y=top?20:170,id=B.f*100+i+1,tk=taken(B.p,B.f,i),sl=B.u&&B.u.p==B.p&&B.u.id==id,tn=pr.T[ty],dy=top?120:170,bw=MB[ty],bx=x+w/2-bw/2,by=top?y+12:y+56,hy=top?by+3:by+22;
+o+=`<g class="rm${sl?" sel":""}${tk?" tk":""}${B.f==pr.fl?" pr":""}" ${tk?`aria-label="Room ${id}, taken"`:`data-u="${i}" tabindex="0" role="button" aria-label="Room ${id}, ${tn}"`}><rect class="rf" x="${x}" y="${y}" width="${w}" height="100"/>${tk?`<rect x="${x}" y="${y}" width="${w}" height="100" fill="url(#ht)"/>`:""}<path d="M${x+w*.25} ${top?20:270}H${x+w*.75}" stroke="#5aa9e6" stroke-width="4"/><path d="M${x+12} ${dy}h20" stroke="var(--card)" stroke-width="4"/>`;
+if(!tk)o+=`<g class="fu">`+rc(bx,by,bw,32,4,I,.25)+rc(bx+3,hy,bw/2-4.5,7,3,I,.35)+rc(bx+bw/2+1.5,hy,bw/2-4.5,7,3,I,.35)+rc(x+w-28,top?y+68:y+8,22,22,3,I,.18)+`</g>`;
+o+=`<text x="${x+8}" y="${top?y+22:y+94}" font-size="15">${id}</text><text class="tl" x="${x+8}" y="${top?y+34:y+79}" font-size="8" font-weight="500">${tn}</text></g>`;x+=w}
+return o+`</svg>`}
+const typeAt=i=>[0,0,1,2,2,1,0,0][i],taken=(p,f,i)=>(f*5+i*3+p*2)%4==1,iso=d=>d.toISOString().slice(0,10),tod=new Date(),R=n=>"R"+n.toLocaleString("en-ZA");
+const ADD=[["Breakfast",160,"pg"],["Late checkout",250,"1"],["Airport pickup",650,"1"],["Parking",60,"pn"]];
+const B={p:0,f:1,u:null,i:iso(new Date(+tod+864e5)),o:iso(new Date(+tod+3*864e5)),g:2,x:[],t:0,ok:null,v:"3d"};
+const nights=()=>Math.max(1,Math.round((new Date(B.o)-new Date(B.i))/864e5));
+function price(){const pr=P[B.p],n=nights(),L=[[`${R(pr.R[typeAt(B.u.i)])} × ${n} night${n>1?"s":""}`,pr.R[typeAt(B.u.i)]*n]];if(pr.k!="Hotel")L.push(["Cleaning fee",250]);B.x.forEach(k=>{const a=ADD[k];L.push([a[0],a[1]*(a[2]=="pg"?B.g*n:a[2]=="pn"?n:1)])});return{L,T:L.reduce((t,l)=>t+l[1],0)}}
+const V={el:null,r:null,sc:null,cam:null,t:-1,yaw:.5,pit:.85,dist:360,d:900,w:0,auto:true,on:false,tried:false,err:false};
+function need3d(cb){if(window.THREE)return cb();if(V.tried)return;V.tried=true;const e=document.createElement("script");e.src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js";e.onload=cb;e.onerror=()=>{V.err=true;side()};document.head.appendChild(e)}
+function init3d(){if(V.r)return;const T=THREE;V.r=new T.WebGLRenderer({antialias:true,alpha:true});V.r.shadowMap.enabled=true;V.r.shadowMap.type=T.PCFSoftShadowMap;V.r.outputEncoding=T.sRGBEncoding;V.r.setPixelRatio(Math.min(devicePixelRatio,2));V.sc=new T.Scene();V.cam=new T.PerspectiveCamera(38,4/3,1,3000);V.el.appendChild(V.r.domElement);
+const c=V.r.domElement;let dr=false;c.addEventListener("pointerdown",e=>{dr=true;V.auto=false;V.lx=e.clientX;V.ly=e.clientY;c.setPointerCapture(e.pointerId)});
+c.addEventListener("pointermove",e=>{if(!dr)return;V.yaw-=(e.clientX-V.lx)*.008;V.pit=Math.max(.12,Math.min(1.45,V.pit+(e.clientY-V.ly)*.006));V.lx=e.clientX;V.ly=e.clientY});
+c.addEventListener("pointerup",()=>dr=false);c.addEventListener("pointercancel",()=>dr=false);c.addEventListener("wheel",e=>{e.preventDefault();V.dist=Math.max(140,Math.min(620,V.dist+e.deltaY*.4))},{passive:false})}
+function reset3d(m){if(m=="in"){V.pit=.3;V.dist=150;V.yaw=0}else{V.pit=.85;V.dist=[300,360,420][Math.max(V.t,0)];V.yaw=.5}V.auto=false}
+function buildScene(ty){const T=THREE,sc=V.sc,P3=PL[ty],cs=getComputedStyle(document.documentElement).getPropertyValue("--acc").trim()||"#0b7a75",ac=new T.Color(cs);
+while(sc.children.length)sc.remove(sc.children[0]);
+sc.add(new T.AmbientLight(0xffffff,.75));const dl=new T.DirectionalLight(0xffffff,.7);dl.position.set(90,300,-60);dl.castShadow=true;dl.shadow.mapSize.set(1024,1024);Object.assign(dl.shadow.camera,{left:-260,right:260,top:260,bottom:-260,near:10,far:800});sc.add(dl);
+const bx=(x,z,w,d,y,h,c,o)=>{const m=new T.Mesh(new T.BoxGeometry(w,h,d),new T.MeshStandardMaterial(Object.assign({color:c,roughness:.85},o||{})));m.position.set(x+w/2,y+h/2,z+d/2);m.castShadow=h>3&&!(o&&o.transparent);m.receiveShadow=true;sc.add(m)};
+const glass={transparent:true,opacity:.4,roughness:.1},SC=[0x3b6ea5,0x7a5c9e,0x2a9d8f][ty],RG=[0xe9c46a,0xe76f51,0x8ab17d][ty],KC=[0x2a9d8f,0xe9c46a,0x6d7fcc][ty],CO=0xe76f51,MU=0xf2b84b;
+const FC={w:0xe8cfa6,t:0xbfe0e6,o:0xb9e0c0},WC={Bath:0xdff1f0,Laundry:0xdff1f0,Kitchen:0xfbeacb,Kitchenette:0xfbeacb,"Living & dining":0xf9e0d6,Entry:0xf1ece0,Balcony:0x9fb5ad};
+const FU={bd:(x,y,w,h)=>{const q=w>50?(w-14)/2:w-12;bx(x-12,y+8,w+24,h+4,0,1,RG);bx(x,y,w,h,0,14,0x8b5e34);bx(x+2,y+2,w-4,h-4,14,6,0xf4efe6);bx(x,y,w,3,0,32,0x6b4f3a);bx(x+5,y+7,q,11,20,5,0xffffff);if(w>50)bx(x+9+q,y+7,q,11,20,5,0xffffff);bx(x+2,y+h*.45,w-4,h*.55-2,20,3,ac);bx(x+2,y+h*.8,w-4,7,20,3.4,MU)},
+s:(x,y,w,h)=>{bx(x+4,y+h+4,w-8,34,0,1,RG);bx(x,y,w,h,0,12,SC);bx(x,y,w,7,12,16,new T.Color(SC).multiplyScalar(.8));bx(x,y,6,h,12,8,new T.Color(SC).multiplyScalar(.8));bx(x+w-6,y,6,h,12,8,new T.Color(SC).multiplyScalar(.8));bx(x+9,y+8,14,10,12,9,MU);bx(x+w-23,y+8,14,10,12,9,CO)},
+t:(x,y,w,h)=>{bx(x,y,w,h,22,3,0xb98a5a);[[x+3,y+3],[x+w-6,y+3],[x+3,y+h-6],[x+w-6,y+h-6]].forEach(a=>bx(a[0],a[1],3,3,0,22,0x8a6a45));[.3,.7].forEach(k=>{bx(x+w*k-5,y-13,10,10,0,14,CO);bx(x+w*k-5,y+h+3,10,10,0,14,0x2a9d8f)})},
+sh:(x,y,w,h)=>{bx(x,y,w,h,0,2,0xdce6ea);bx(x,y,w,h,2,38,0x9fd3f2,glass)},
+wc:(x,y,w,h)=>{bx(x,y,w,6,0,24,0xf4f4f4);bx(x+2,y+6,w-4,h-8,0,12,0xf4f4f4)},
+bs:(x,y,w,h)=>{bx(x,y,w,h,0,22,KC);bx(x+w*.2,y+h*.2,w*.6,h*.6,22,1,0xf4f4f4)},
+k:(x,y,w,h)=>{bx(x,y,w,h,0,26,KC);bx(x,y,w,h,26,2,0xf1e9db);bx(x+8,y+3,18,h-6,28,1,0x9aa7b0);if(w>60){bx(x+w-36,y+3,10,10,28,1,0x222);bx(x+w-20,y+3,10,10,28,1,0x222)}}};
+const gaps=[...P3.d.map(([k,x,y,r])=>k=="H"||k=="D"?[x,y,x+r,y]:k=="V"?[x,y,x,y+r]:[x,y-r,x,y]),...P3.o,...P3.gd];
+const sub=(a,g0,g1)=>a.flatMap(([s,e])=>g1<=s||g0>=e?[[s,e]]:[[s,g0],[g1,e]].filter(q=>q[1]>q[0]));
+const wH=(x1,x2,y,zz,H,c)=>{let a=[[x1,x2]];gaps.forEach(g=>{if(g[1]==y&&g[3]==y)a=sub(a,g[0],g[2])});a.forEach(([s,e])=>bx(s,zz,e-s,3,0,H,c))};
+const wV=(y1,y2,x,xx,H,c)=>{let a=[[y1,y2]];gaps.forEach(g=>{if(g[0]==x&&g[2]==x)a=sub(a,g[1],g[3])});a.forEach(([s,e])=>bx(xx,s,3,e-s,0,H,c))};
+P3.r.forEach(([x,y,w,h,l,c])=>{bx(x,y,w,h,-2,2,FC[c]||0xe9e2d3);const H=l=="Balcony"?12:40,wc=WC[l]||(/Bed|Sleep/.test(l)?0xe0e4fb:0xf1ece0);wH(x,x+w,y,y,H,wc);wH(x,x+w,y+h,y+h-3,H,wc);wV(y,y+h,x,x,H,wc);wV(y,y+h,x+w,x+w-3,H,wc);
+if(l=="Balcony"){bx(x+20,y+8,14,14,0,14,CO);bx(x+46,y+8,14,14,0,14,0x2a9d8f);bx(x+35,y+10,10,10,0,10,0xb98a5a);bx(x+w-24,y+8,12,12,0,18,0x3f9d6b);bx(x+w-24,y+8,12,5,18,8,0xe76f8b)}});
+bx(10,190,324,24,-2,2,0x9fb0ae);bx(14,201,316,2,0,.5,0xe8eeed);
+P3.x.forEach(([a,b,c,d])=>b==d?bx(Math.min(a,c),b-2.5,Math.abs(c-a),5,10,22,0x7cc4f0,glass):bx(a-2.5,Math.min(b,d),5,Math.abs(d-b),10,22,0x7cc4f0,glass));
+P3.gd.forEach(([a,b,c,d])=>{const m=(a+c)/2;bx(Math.min(a,c),b-1.5,Math.abs(c-a),3,2,34,0x7cc4f0,glass);bx(Math.min(a,c),b-2,Math.abs(c-a),4,36,4,0xdfe4e3);bx(m-1,b-2,2,4,2,34,0xdfe4e3)});
+const DC=[0xb5532d,0x8b5e34,0x4a90a4,0x6a994e,0x7a5c9e];
+P3.d.forEach(([k,x,y,r],i)=>{const c=DC[i%5];if(k=="H"||k=="D"){bx(x,y-2,r,4,34,6,0xf1ece0);bx(x-1.5,k=="H"?y-r:y,3,r,0,34,c)}else{bx(x-2,k=="V"?y:y-r,4,r,34,6,0xf1ece0);bx(x,y-1.5,r,3,0,34,c)}});
+P3.f.forEach(([c,...a])=>FU[c]&&FU[c](...a));
+V.auto=!matchMedia("(prefers-reduced-motion:reduce)").matches;V.yaw=.5;V.pit=.85;V.dist=[300,360,420][ty];V.d=900}
+function frame(){if(!V.el||!V.el.isConnected){V.on=false;return}requestAnimationFrame(frame);const w=V.el.clientWidth;if(w&&w!=V.w){V.w=w;V.r.setSize(w,Math.round(w*.75));V.cam.aspect=4/3;V.cam.updateProjectionMatrix()}
+if(V.auto)V.yaw+=.004;V.d+=(V.dist-V.d)*.06;const cp=Math.cos(V.pit);V.cam.position.set(170+V.d*cp*Math.sin(V.yaw),V.d*Math.sin(V.pit),112+V.d*cp*Math.cos(V.yaw));V.cam.lookAt(170,10,112);V.r.render(V.sc,V.cam)}
+function mount(ty){const sl=$("#v3slot");if(!sl)return;if(!V.el){V.el=document.createElement("div");V.el.style.width="100%"}sl.appendChild(V.el);
+if(V.err){sl.querySelector(".ld").textContent="3D needs an internet connection.";return}
+need3d(()=>{init3d();const l=sl.querySelector(".ld");if(l)l.remove();if(V.t!==ty){buildScene(ty);V.t=ty}V.w=0;if(!V.on){V.on=true;frame()}})}
+const vw3=ty=>`<div class="vt"><button data-vw="3d" class="${B.v=="3d"?"on":""}">3D</button><button data-vw="2d" class="${B.v=="2d"?"on":""}">Plan</button></div>`+(B.v=="3d"?`<div class="v3slot" id="v3slot"><span class="ld">Loading 3D…</span><div class="rst"><button data-vr="o">Reset view</button></div></div><p class="muted tip">Drag to look around · scroll to zoom</p>`:plan(ty));
+function rooms(){const pr=P[B.p];
+$("#pchips").innerHTML=P.map((x,i)=>`<button data-pp="${i}" class="${i==B.p?"on":""}">${x.a}</button>`).join("");$("#pam").textContent=pr.n+" · "+pr.am.join(" · ");
+$("#fp").textContent=pr.k+(B.f==pr.fl?" · Top floor":"");$("#ft").textContent="Floor "+B.f;$("#fd").innerHTML=Array.from({length:pr.fl},(_,k)=>`<i class="${k+1==B.f?"on":""}"></i>`).join("");
+$("#grid").innerHTML=floorMap();side()}
+function side(){const s=$("#side"),pr=P[B.p];
+if(B.ok){s.innerHTML=`<h3>You’re all set ✓</h3><p class="muted">Reference <b>${B.ok.ref}</b></p><p>${B.ok.txt}</p><a class="btn dk" target="_blank" rel="noreferrer" href="https://wa.me/27000000000?text=${encodeURIComponent("Booking "+B.ok.ref+": "+B.ok.txt)}">Confirm on WhatsApp</a> <button class="btn ghost2" data-new>Book another</button>`;return}
+if(!B.u||B.u.p!=B.p){s.innerHTML=`<h3>Select a room</h3><p class="muted">Tap any available room to see its layout, price and what’s included.</p>`;return}
+const ty=typeAt(B.u.i),pl=PL[ty],pc=price();
+s.innerHTML=`<div class="sg"><div><h3>Room ${B.u.id} · ${pr.T[ty]}</h3><div class="hold" id="hold"></div>${vw3(ty)}<div class="sp"><span><b>${pl.m}</b></span><span>Sleeps <b>${pl.s}</b></span><span><b>${pl.bed}</b></span><span>${B.f==pr.fl?"Top-floor view":"City view"}</span></div></div><div>
+<div class="f2"><label>Check-in<input type="date" id="di" value="${B.i}" min="${iso(tod)}"></label><label>Check-out<input type="date" id="do" value="${B.o}" min="${B.i}"></label></div>
+<div class="step2"><span>Guests</span><div><button data-g="-1" aria-label="Fewer guests">−</button><b>${B.g}</b><button data-g="1" aria-label="More guests">+</button></div></div>
+${ADD.map((a,k)=>`<label class="ad"><span><input type="checkbox" data-ad="${k}" ${B.x.includes(k)?"checked":""}> ${a[0]}</span><span>${R(a[1])}</span></label>`).join("")}
+<div class="pr2">${pc.L.map(l=>`<div><span>${l[0]}</span><span>${R(l[1])}</span></div>`).join("")}<div class="t"><span>Total</span><span>${R(pc.T)}</span></div><div>Includes 15% VAT</div></div><button class="btn dk" style="width:100%;margin-top:1rem" data-res>Reserve room</button></div></div>`;if(B.v=="3d")mount(ty)}
+document.addEventListener("click",e=>{const b=e.target.closest("[data-pp],[data-nf],[data-vw],[data-vr],[data-u],[data-g],[data-res],[data-new]");if(!b)return;const d=b.dataset;
+if(d.nf!==undefined){nf();return}if(d.vw!==undefined){B.v=d.vw;side();return}if(d.vr!==undefined){reset3d(d.vr);return}if(d.pp!==undefined)pick(+d.pp);
+else if(d.u!==undefined){const i=+d.u;B.u={p:B.p,i,id:B.f*100+i+1};B.g=Math.min(B.g,PL[typeAt(i)].s);B.t=Date.now()+9e5;B.ok=null}
+else if(d.g!==undefined)B.g=Math.max(1,Math.min(PL[typeAt(B.u.i)].s,B.g+ +d.g));
+else if(d.res!==undefined){const pc=price(),pr=P[B.p];B.ok={ref:"PLS-"+Math.random().toString(36).slice(2,6).toUpperCase(),txt:`Room ${B.u.id}, ${pr.n}, ${B.i} to ${B.o}, ${B.g} guest${B.g>1?"s":""}. Total ${R(pc.T)}.`};B.u=null}
+else if(d.new!==undefined)B.ok=null;
+rooms();if(d.u!==undefined)setTimeout(()=>$("#side").scrollIntoView({behavior:"smooth",block:"nearest"}),60)});
+document.addEventListener("change",e=>{const t=e.target;if(t.type=="date"&&!t.value)return;if(t.id=="di"){B.i=t.value;if(B.o<=B.i)B.o=iso(new Date(+new Date(B.i)+864e5))}else if(t.id=="do")B.o=t.value;else if(t.dataset.ad!==undefined){const k=+t.dataset.ad;B.x=B.x.includes(k)?B.x.filter(v=>v!=k):[...B.x,k]}else return;side()});
+document.addEventListener("keydown",e=>{if((e.key=="Enter"||e.key==" ")&&e.target.matches("g[data-u]")){e.preventDefault();e.target.dispatchEvent(new MouseEvent("click",{bubbles:true}))}});
+function nf(){const g=$("#grid");if(g.classList.contains("out"))return;g.classList.add("out");setTimeout(()=>{B.f=B.f%P[B.p].fl+1;rooms();g.classList.remove("out");g.classList.add("in");setTimeout(()=>g.classList.remove("in"),600)},280)}
+setInterval(()=>{const h=$("#hold");if(!h||!B.u)return;const q=Math.max(0,Math.round((B.t-Date.now())/1000));if(!q){B.u=null;rooms();return}h.textContent=`Holding this room for you · ${Math.floor(q/60)}:${String(q%60).padStart(2,"0")}`},1000);
+pick(0);view();rooms();
 
 // scroll: hero parallax + pinned story
 // numbers follow scroll, then freeze at their final value
